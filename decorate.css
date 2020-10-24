@@ -1,0 +1,287 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu' , sans-serif;
+    background-color: rgb(92, 87, 87);
+    color: white;
+    display:flex;
+    background-image: repeating-linear-gradient(33deg ,rgb(247, 204, 36) 0% 7%, rgb(233, 192, 30) 7%  9%);
+    justify-content: center;
+    align-items: center;
+    }
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin:2%;
+    border-radius: 15px;
+    background-color: rgb(75, 75, 74);
+    box-shadow: 0px 0px 15px 2px rgb(41, 40, 40);
+
+}
+
+.nav-wrapper {
+    display: flex;
+    text-transform: uppercase;
+    justify-content: space-between;
+    padding: 1%;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.nav-left {
+    display: flex; 
+    padding-left: 6px;   
+}
+
+.nav-right {
+    padding-right: 6px;
+}
+
+
+.nav-link{
+    list-style: none;
+    margin-right: 40px;
+    
+
+}
+
+.nav-left a {
+    text-decoration: none;
+    color: white;
+}
+
+.portfolio-main-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(134, 107, 134);
+    width: 100%;
+    height: 50vh;
+    
+   
+}
+
+.my-image {
+    flex:1;
+    height: 90%;
+}
+.my-image img{
+    height:100%;
+    object-fit:contain;
+    width: 100%;
+}
+
+.my-text {
+    flex:1;
+    
+}
+
+.my-text-p{
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 600;
+
+}
+
+.portfolio-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    
+    grid-auto-rows: auto;
+    margin: 30px 30px 60px 30px;
+}
+
+.card {
+    border-radius: 3px;
+    padding:0.5rem;
+    background-color: rgb(66, 62, 62);
+    color: #feda6a;
+    box-shadow:0px 0px 16px  rgb(0, 0, 0)  ;
+    margin:20px 20px 10px 20px;
+
+}
+
+.projects {
+    margin: 20px;
+}
+
+.projects > p {
+    text-align: center;  
+    font-weight: 600;  
+}
+
+@media(max-width : 600px) {
+    .nav-wrapper {
+        padding:10px;
+    }
+
+    .portfolio-main-card {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(83, 126, 190);
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .my-image {
+        max-height: 40%;
+        align-items: center;
+        order: 1;
+    }
+
+    .my-text {
+        order:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        max-height: 50%;
+    }
+    .my-text-p {
+        align-items: center;
+    }
+
+    .portfolio-cards-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+
+}  
+
+@media(max-width:400px) {
+    body {
+        justify-content: center;
+        align-content: center;
+    }
+    .container {
+        grid-template-columns: 100%;
+        margin: auto;
+        border-radius: 0;
+
+    }
+
+ 
+      /*============================== Hamburger Menu ============================*/
+      .nav-wrapper {
+          width:100%;
+          padding:0;
+      }
+      .nav-left-wrapper {
+          transform: translateY(-100%);
+          -webkit-transition: transform 0.7s ease-out;
+      }
+
+      .nav-left-wrapper-appear {
+          transform: translateY(7%);
+          -webkit-transition: transform 0.5 ease-in;
+          box-shadow: 0 5px black;
+      }
+
+     
+      .nav-left-menu {
+        display: flex;
+        align-items: center;
+        margin: 0 ;
+        z-index: 1;
+        padding:6px;
+        width:100%;
+      }
+      .menu-btn {
+          width: 30px;
+          height: 20px;
+          display: flex;
+          flex-direction: column;
+          border:2px solid black;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+      }
+      .nav-right {
+          background-color: transparent;
+      }
+      
+      
+      /* Style Hamburger*/
+      #bar1, #bar2 , #bar3 {
+        width: 20px;
+        height: 2px;
+        margin: 1px;
+        background-color:  black;
+        transition: 0.4s;
+
+      }
+     
+      
+      /* Rotate first bar */
+      #bar1.change {
+        
+        -webkit-transform: rotate(-45deg) translate(-3px , 3px) ;
+        transform: rotate(-45deg) translate(-3px , 3px) ;
+      }
+      
+      /* Fade out the second bar */
+      #bar2.change {
+        opacity: 0;
+      }
+      
+      /* Rotate last bar */
+      #bar3.change {
+        -webkit-transform: rotate(45deg) translate(-2px , -3px) ;
+        transform: rotate(45deg) translate(-2px , -3px) ;
+      }
+
+      .menu-btn.change {
+          border: 0;
+      }
+      /*========= Mobile Menu for nav left links==================*/
+      .nav-left-wrapper{
+        position: fixed;
+        text-align: center;
+        list-style: none;
+        background: rgb(44, 44, 97);
+        width: 100%;
+        color: white;
+        font-size: 10px;
+        padding-top: 3.9em;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .0), 0 6px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-left {
+        display:flex;
+        flex-direction:column;
+        align-items:space-around;
+        justify-content :space-around;
+        align-content:space-around;
+        
+      }
+     
+      .nav-left-wrapper li{
+        margin: none !important;
+        padding:1em 0 1em 0;
+      }
+      .nav-left-wrapper li a{
+        padding-top: 1em;
+        padding-bottom: 1em;
+        width: 100%;
+        color: white;
+        transition: background-color 0.6s ease;
+      
+      }
+      .nav-left li:hover{
+        transition: background-color 0.6s ease;
+        background: black;
+      
+      }
+      
+      /* extra addition */
+}
